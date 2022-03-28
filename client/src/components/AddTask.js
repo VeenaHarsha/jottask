@@ -7,7 +7,6 @@ function AddTask() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    console.log("DES:", description);
     try {
       const body = { description };
       const response = await fetch("http://localhost:5050/tasks", {
@@ -15,7 +14,7 @@ function AddTask() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      console.log("Whar ", response);
+      setDescription("");
       window.location("/");
     } catch (error) {
       console.log(error.message);
@@ -24,14 +23,14 @@ function AddTask() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className="container-sm px-4  text-center">
+      <div className="d-flex p-4 justify-content-center">
         <textarea
-          className="input-box"
+          className="form-control-lg"
           placeholder="Add Task..."
           value={description}
           onChange={handleChange}
         ></textarea>
-        <button type="submit" className="btn-secondary">
+        <button type="submit" className="btn btn-lg btn-secondary m-2">
           Add
         </button>
       </div>

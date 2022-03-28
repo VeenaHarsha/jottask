@@ -64,11 +64,12 @@ app.put("/tasks/:id", async (req, res) => {
 app.post("/tasks", async (req, res) => {
   try {
     const { description } = req.body;
-    console.log("123:", description);
     await pool.query(
-      "INSERT INTO TASKS (description) VALUES ( $1) RETURNING *",
+      "INSERT INTO TASKS (description) VALUES ( $1) RETURNING * ",
       [description]
     );
+    console.log("123:", response.rows[0]);
+
     res.json(response.rows[0]);
   } catch (error) {
     console.log(error.message);
