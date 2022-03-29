@@ -5,7 +5,6 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const dotenv = require("dotenv").config({
   path: path.join(__dirname, "../.env"),
 });
-console.log("dotenv.env:", dotenv, process.env.DATABASE);
 
 module.exports = {
   entry: "./src/index.js",
