@@ -30,7 +30,9 @@ function TaskList() {
             key={item.id}
             className="list-group-item d-flex justify-content-between "
           >
-            <div className=" text-wrap">{item.description}</div>
+            <div className="text-wrap overflow-auto" style={{ height: "5rem" }}>
+              {item.description}
+            </div>
             <div
               className="d-md-flex justify-content-md-end align-middle"
               style={{ width: "auto", height: "3rem", verticalAlign: "middle" }}
