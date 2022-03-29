@@ -30,7 +30,11 @@ function AddTask() {
           value={description}
           onChange={handleChange}
         ></textarea>
-        <button type="submit" className="btn btn-lg btn-secondary m-2">
+        <button
+          type="submit"
+          className="btn  btn-secondary m-2 "
+          style={{ width: "auto", height: "3rem", verticalAlign: "middle" }}
+        >
           Add
         </button>
       </div>

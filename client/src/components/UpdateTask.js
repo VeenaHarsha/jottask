@@ -24,7 +24,7 @@ function UpdateTask({ task }) {
   return (
     <>
       <button
-        className="btn m-1 btn-secondary"
+        className="btn m-1 btn-secondary me-1"
         type="button"
         data-bs-toggle="modal"
         data-bs-target={`#id${task.id}`}

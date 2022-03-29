@@ -15,7 +15,6 @@ const pool = new Pool({
 });
 
 const port = process.env.APP_PORT || 5050;
-console.log(port);
 
 app.use(cors());
 app.use(express.json());
