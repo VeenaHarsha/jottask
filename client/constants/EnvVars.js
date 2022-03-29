@@ -1,5 +1,3 @@
-import React from "react";
-
 export const BASE_URL = `http://localhost:${process.env.APP_PORT}`;
 export const DB = process.env.DATABASE;
 export const HOST = process.env.DB_HOST;
