@@ -3,6 +3,7 @@ import AddTask from "./components/AddTask";
 import TaskList from "./components/TaskList";
 
 function App() {
+  console.log("DB:", process.env.DATABASE);
   return (
     <div className="container-sm px-4 py-5 my-5 text-center">
       <h1>Task Jotter</h1>

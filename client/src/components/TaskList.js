@@ -1,16 +1,18 @@
 import React, { useState, useEffect } from "react";
+import { BASE_URL } from "../../constants/EnvVars";
 import UpdateTask from "./UpdateTask";
 
 function TaskList() {
   const [tasks, setTasks] = useState([]);
 
   async function getTasks() {
-    const result = await fetch("http://localhost:5050/tasks");
+    const result = await fetch(`${BASE_URL}/tasks`);
     const data = await result.json();
     setTasks(data);
   }
+
   async function deleteTask(id) {
-    await fetch(`http://localhost:5050/tasks/${id}`, {
+    await fetch(`${BASE_URL}/tasks/${id}`, {
       method: "DELETE",
     });
     setTasks(tasks.filter((item) => item.id !== id));

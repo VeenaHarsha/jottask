@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BASE_URL } from "../../constants/EnvVars";
 
 function UpdateTask({ task }) {
   const [description, setDescription] = useState(task.description);
@@ -8,13 +9,14 @@ function UpdateTask({ task }) {
   async function updateTask(id) {
     try {
       const body = { description };
-      const list = await fetch(`http://localhost:5050/tasks/${id}`, {
+      const list = await fetch(`${BASE_URL}/tasks/${id}`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
       const data = await list.json();
       console.log(data);
+      window.location = "/";
     } catch (error) {
       console.log(error.message);
     }

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { BASE_URL } from "../../constants/EnvVars";
 
 function AddTask() {
   const [description, setDescription] = useState("");
@@ -9,13 +10,12 @@ function AddTask() {
     event.preventDefault();
     try {
       const body = { description };
-      const response = await fetch("http://localhost:5050/tasks", {
+      const response = await fetch(`${BASE_URL}/tasks`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(body),
       });
-      setDescription("");
-      window.location("/");
+      window.location = "/";
     } catch (error) {
       console.log(error.message);
     }
